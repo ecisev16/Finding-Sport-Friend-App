@@ -12,14 +12,16 @@ import ProductDetailPage from './pages/ProductDetail'
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/',   // parent örneğin '/root' adında olsaydı. bütün absolute patha sahip çocukarı da '/root ile başlaması gerekecekti.'
+    // bu bir absolute pathdır.
     element: <RootLayout/>,
     errorElement: <ErrorPage/>,
     children: [
-      {path:'/', element: <HomePage/>},
-      {path:'/products', element: <ProductsPage/>},
-      {path: '/products/:productID', element: <ProductDetailPage/>}, // dynamic segment
-      
+      {index:true, element: <HomePage/>}, //alternative of path:'' usage.
+      {path:'products', element: <ProductsPage/>},
+      {path:'products/:productID', element: <ProductDetailPage/>}, // dynamic segment
+      // relative pathlardır.
+      //'products/:productID' is direct child of root route not products route
     ]
   }
   
