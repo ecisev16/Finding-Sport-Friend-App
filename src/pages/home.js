@@ -9,7 +9,7 @@ function HomePage(){
         <>
             <h1>My Home Page</h1>
             <p>
-                Go to <Link to="/products">The List of Products </Link>
+                Go to <Link to="products">The List of Products </Link>
             </p>  
             {/*Her seferinde http request göndererek bütün react app ini tekrar başlatır. Bu iyi bir şey değil
             Bu single page application mantığını bozar */}

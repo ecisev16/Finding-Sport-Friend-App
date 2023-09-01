@@ -1,4 +1,5 @@
-import {NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom'; //Bu bağlantılar, sitenin veya uygulamanın ana gezinme yapısını oluştururlar ve kullanıcıların siteyi dolaşmasını kolaylaştırır.
+//"nav link" genellikle stil ve düzen açısından özelleştirilir ve menü öğelerini vurgulamak veya seçili bağlantıyı belirtmek için CSS veya JavaScript ile işlenir.
 import classes from './MainNavigation.module.css';
 
 function MainNavigation(){
