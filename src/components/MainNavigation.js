@@ -1,4 +1,4 @@
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import classes from './MainNavigation.module.css';
 
 function MainNavigation(){
@@ -7,10 +7,25 @@ function MainNavigation(){
             <nav>
                 <ul className={classes.list}>
                     <li>
-                        <Link to = "/">Home</Link>
+                        <NavLink 
+                        to = "/"
+                        className = {({isActive})=>
+                            (isActive ? classes.active : undefined)
+                        }
+                        end // "/" bütün safya adlarında geçeceği için yanlış highlight yapmamak adına home page için "/" ile bitmesi koşulunu koyduk.
+                        >
+                            Home
+                        </NavLink>
                     </li>
                     <li>
-                        <Link to = "/products">Products</Link>
+                        <NavLink 
+                        to = "/products"
+                        className = {({isActive})=>
+                            (isActive ? classes.active : undefined)
+                        }
+                        >
+                            Products
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
