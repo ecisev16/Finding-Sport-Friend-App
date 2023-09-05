@@ -6,9 +6,10 @@ import {
 } from 'react-router-dom';
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
-import ProductsPage from './pages/Products';
+import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import ProductDetailPage from './pages/ProductDetail'
+import OwnerActivitiesPage from './pages/OwnerActivities';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage/>,
     children: [
       {index:true, element: <HomePage/>}, //alternative of path:'' usage.
-      {path:'products', element: <ProductsPage/>},
+      {path:'profil', element: <ProfilePage/>},
+      {path:'profil/:profilID', element: <ProductDetailPage/>}, 
+      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 
+      {path:'profil/katilinan-aktiviteler', element: <ProductDetailPage/>}, 
       {path:'products/:productID', element: <ProductDetailPage/>}, // dynamic segment
       // relative pathlardır.
       //'products/:productID' is direct child of root route not products route

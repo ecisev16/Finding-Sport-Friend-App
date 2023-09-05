@@ -20,12 +20,12 @@ function MainNavigation(){
                     </li>
                     <li>
                         <NavLink 
-                        to = "/products"
+                        to = "/profil"
                         className = {({isActive})=>
                             (isActive ? classes.active : undefined)
                         }
                         >
-                            Products
+                            Profiller
                         </NavLink>
                     </li>
                 </ul>
