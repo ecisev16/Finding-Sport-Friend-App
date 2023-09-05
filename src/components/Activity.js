@@ -10,7 +10,7 @@ function Activity(props){
                 <Card className="activity-item">
                     <ActivityDate date = {props.date}/>
                     <div className="activity-item__description">
-                        <h4>{props.title}</h4>
+                        {props.title}
                         
                     </div>
                     <button className="activity-item__button">Katılma isteği</button>
