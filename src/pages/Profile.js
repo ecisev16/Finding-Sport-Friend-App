@@ -1,6 +1,6 @@
 import {Link, useNavigate} from 'react-router-dom';
 import ActivityList from '../components/ActivityList'
-
+import '../components/Button.css'
 
   
 
@@ -8,18 +8,21 @@ function ProfilePage(){
     return(
         <>
             <h1> ...'s Profile </h1>
-            <ul>
+            <div>
                 
-                <li key="k1">
-                    <Link to="duzenlenen-aktiviteler">Düzenlenen Aktiviteler</Link>
-                </li>
 
-                <li key="k2">
-                    <Link to="products">Katılınan Aktiviteler</Link>
-                </li>
+                <Link to="duzenlenen-aktiviteler">
+                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
+                </Link>
+
+                <Link to="">
+                    <button className = "button" key="k2">Katılınan Aktiviteler</button>
+                </Link>
+
+                
                     
                 
-            </ul>
+            </div>
         </>
         
         

@@ -8,7 +8,6 @@ import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
-import ProductDetailPage from './pages/ProductDetail'
 import OwnerActivitiesPage from './pages/OwnerActivities';
 
 const router = createBrowserRouter([
@@ -20,10 +19,10 @@ const router = createBrowserRouter([
     children: [
       {index:true, element: <HomePage/>}, //alternative of path:'' usage.
       {path:'profil', element: <ProfilePage/>},
-      {path:'profil/:profilID', element: <ProductDetailPage/>}, 
+
       {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 
-      {path:'profil/katilinan-aktiviteler', element: <ProductDetailPage/>}, 
-      {path:'products/:productID', element: <ProductDetailPage/>}, // dynamic segment
+      {path:'profil/katilinan-aktiviteler', }, 
+
       // relative pathlardır.
       //'products/:productID' is direct child of root route not products route
     ]

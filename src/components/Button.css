@@ -1,0 +1,25 @@
+/* Temel buton stilleri */
+.button {
+    margin-right: 10px;
+    display: inline-block;
+    padding: 10px 20px; /* Butonun iç boşluğu */
+    background-color: #ff693f; /* Arkaplan rengi */
+    color: #000000; /* Metin rengi */
+    border: 1px solid white; /* Kenarlık yok */
+    border-radius: 5px; /* Köşe yuvarlama */
+    text-align: center;
+    text-decoration: none; /* Metin altını çizme */
+    cursor: pointer; /* İmleci el işareti olarak gösterme */
+    font-size: 1.5rem;
+  }
+  
+  /* Butonun üzerine geldiğinde stiller */
+  .button:hover {
+    background-color: #ff693f; /* Hover durumunda arka plan rengi değiştirme */
+  }
+  
+  /* Butonun tıklama durumunda stiller */
+  .button:active {
+    background-color: #ff693f; /* Tıklama durumunda arka plan rengi değiştirme */
+  }
+  
