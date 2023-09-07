@@ -18,6 +18,22 @@ const ActivityList = (props) =>{
                 date = {actvy.date}
             />
         ))}
+        {props.activities.map((actvy) => (
+            <Activity
+                key = {actvy.id}
+                title = {actvy.title}
+                
+                date = {actvy.date}
+            />
+        ))}
+        {props.activities.map((actvy) => (
+            <Activity
+                key = {actvy.id}
+                title = {actvy.title}
+                
+                date = {actvy.date}
+            />
+        ))}
     </ul>
 
     );

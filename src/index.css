@@ -8,6 +8,11 @@
   line-height: 24px;
   font-weight: 400;
 
+  padding-top: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(252, 77, 2);
+
   color-scheme: light dark;
   color: rgba(21, 21, 21, 0.87);
   background-color:antiquewhite;
@@ -41,6 +46,10 @@
 
 body {
   margin: 0;
+  padding-top: 80px;
+  padding-left: 96px;
+  padding-right: 24px;
+  background-color: rgb(252, 110, 2);
 }
 
 ul {

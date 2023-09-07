@@ -5,7 +5,7 @@ function HomePage(){
     
     return (
         <>
-            
+            {/*<img class="voice-search-icon" src="icons/voice-search-icon.svg"></img>*/}
         </>
     )
 }
