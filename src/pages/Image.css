@@ -10,7 +10,7 @@
   
 .rounded-image img {
   width: 100%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
-  height: 100%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
+  height: 150%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
   object-fit: cover; /* Resmi çerçeve boyutuna sığacak şekilde kırp */
   
   }
