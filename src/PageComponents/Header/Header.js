@@ -1,10 +1,11 @@
 import './Header.css'
+import SearchBar from './SearchBar/SearchBar';
 
 function Header(props){
     return(
         <>
             <div className="header">
-                header
+                <SearchBar/>
             </div>
         </>)
             

@@ -1,5 +1,5 @@
 import './SideBar.css'
-import './SideBarButton/SideBarButton'
+
 import SideBarButton from './SideBarButton/SideBarButton';
 
 function SideBar(props){

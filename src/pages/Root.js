@@ -1,5 +1,5 @@
 import {Outlet} from 'react-router-dom';
-import MainNavigation from '../components/MainNavigation';
+
 import Header from '../PageComponents/Header/Header';
 import SideBar from '../PageComponents/SideBar/SideBar';
 
@@ -9,9 +9,8 @@ function RootLayout(){
         <>
 
             <Header/>
-            {/*<h1>Root Layout</h1>*/}
-            <SideBar></SideBar>
-            <MainNavigation/>
+            <SideBar/>
+            
             <main>
                 <Outlet/>
             </main>

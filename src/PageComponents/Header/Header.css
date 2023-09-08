@@ -3,6 +3,7 @@
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
 
     position: fixed;
     top: 0;
@@ -10,5 +11,7 @@
     right: 0;
     z-index: 100;
 
-    background-color: rgb(146, 17, 245);
+    background-color: rgb(255, 252, 250);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
 }

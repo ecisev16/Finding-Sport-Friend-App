@@ -1,6 +1,11 @@
+.sidebar-div{
+    margin-top: 60px;
+}
+
 .sidebar-link {
     height: 74px;
     display: flex;
+    margin-top: 10px;
     justify-content: center;
     align-items: center;
     flex-direction: column;

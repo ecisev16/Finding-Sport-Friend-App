@@ -1,0 +1,25 @@
+.form-control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    font-size: 16px;
+    justify-content: center;
+
+}
+
+.form-control input{
+    width: 30%;
+    height: 60%;
+    border-radius: 20px;
+    background-color: aliceblue;
+    border-color: rgb(252, 110, 2);
+    border-style: solid;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-control input:focus {
+    outline: none;
+    background: aliceblue;
+    border-color:rgb(252, 110, 2);
+  }

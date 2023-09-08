@@ -1,18 +1,23 @@
+import {Link} from 'react-router-dom';
 import './SideBarButton.css'
+
 
 function SideBarButton(props){
     return(
         <>
-            <div className="sidebar-link">
-                <button>Profil</button>
+        <div className="sidebar-div">
+            <Link to="/profil" className="sidebar-link" >
+                <button >Profil</button>
                 
                 
-            </div>
-            <div className="sidebar-link">
+            </Link>
+            <Link to="/" className="sidebar-link">
                 
                 <button>Keşfet</button>
                 
-            </div>
+            </Link>
+        </div>
+            
         </>)
             
         

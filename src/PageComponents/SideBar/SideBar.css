@@ -2,11 +2,15 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    top: 80px;
+    top: 0px;
     background-color: white;
-    width: 150px;
+    width: 190px;
     z-index: 200;
     padding-top: 5px;
+
+    background-color:rgb(255, 247, 242);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+
 }
 
 .sidebar-link {
