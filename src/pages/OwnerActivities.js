@@ -2,8 +2,10 @@
 import {Link, useNavigate} from 'react-router-dom';
 import ActivityList from '../components/ActivityList'
 import './OwnerActivities.css'
+
 const ACTIVITIES = [
     {
+      photo: "../public/components/image/person1.jpg",
       id: 'e1',
       title: 'Voleybol Maçı',
       
