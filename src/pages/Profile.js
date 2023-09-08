@@ -12,7 +12,7 @@ function ProfilePage(){
                 <div>
                     <h1> ...'s Profile</h1>
                 </div>
-                <div class="rounded-image">
+                <div className="rounded-image">
                     <img  src="image/img.jpg" alt="" className="image"></img>
                 </div>
             </div>
