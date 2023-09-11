@@ -4,7 +4,7 @@ import {
 
 } from 'react-router-dom';
 import ErrorPage from './pages/Error';
-import HomePage from './pages/Home';
+import ExplorePage from './pages/Explore';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import OwnerActivitiesPage from './pages/OwnerActivities';
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <RootLayout/>,
     errorElement: <ErrorPage/>,
     children: [
-      {index:true, element: <HomePage/>}, 
+      {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
 
       {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 

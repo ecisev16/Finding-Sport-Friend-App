@@ -1,16 +1,20 @@
+.main-div{
+  display: flex;
+
+}
 .rounded-image {
     width: 200px; /* Resmin genişliği (istediğiniz değeri kullanabilirsiniz) */
     height: 200px; /* Resmin yüksekliği (istediğiniz değeri kullanabilirsiniz) */
     border-radius: 50%; /* Yuvarlak kenarlık için yarıçap */
     overflow: hidden; /* Resmin dışında kalan kısmı gizler */
-    
-
+    display: flex;
+    justify-content: left;
 
   }
   
 .rounded-image img {
   width: 100%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
-  height: 200%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
+  height: 100%; /* Resmi yuvarlak çerçevenin içine sığdırmak için */
   object-fit: cover; /* Resmi çerçeve boyutuna sığacak şekilde kırp */
-  
-  }
+}
+
