@@ -1,32 +1,19 @@
 import {Link, useNavigate} from 'react-router-dom';
 import ActivityList from '../components/ActivityList'
 import '../components/Button.css'
-import './Image.css';
+import ProfilPhoto from '../components/ActivityProfilPhoto';
+import './Profile.css'
 
   
 
 function ProfilePage(){
     return(
         <>
-            <div >
-                <div>
-                    <h1> ...'s Profile</h1>
-                </div>
-                <div className="rounded-image">
-                    <img  src="image/img.jpg" alt="" className="image"></img>
-                </div>
-            </div>
-            
+            <div className='main-div'>
+              <ProfilPhoto/>
 
-            <div>
-                <Link to="duzenlenen-aktiviteler">
-                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
-                </Link>
-
-                <Link to="">
-                    <button className = "button" key="k2">Katılınan Aktiviteler</button>
-                </Link>               
-            </div>
+                 
+            </div>  
         </>
         
         
@@ -46,3 +33,23 @@ export default ProfilePage;
                 ))}
             </ul>
         </>*/}
+
+
+
+        {/* <div>
+                    <h1> ...'s Profile</h1>
+                </div> 
+                <div className="rounded-image">
+                    <img  src="image/img.jpg" alt="" className="image"></img>
+                </div>
+            </div>
+            
+
+             <div>
+                <Link to="duzenlenen-aktiviteler">
+                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
+                </Link>
+
+                <Link to="">
+                    <button className = "button" key="k2">Katılınan Aktiviteler</button>
+                </Link>                */}

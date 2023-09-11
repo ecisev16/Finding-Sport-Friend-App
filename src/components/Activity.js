@@ -11,7 +11,7 @@ function Activity(props){
                 
                     
                     <Card className="activity-item">    
-                        <ProfilPhoto img />
+                        <ProfilPhoto/>
                       
                         <div className="activity-item__description">
                             {props.title}
