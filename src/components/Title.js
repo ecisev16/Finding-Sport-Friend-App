@@ -1,6 +1,6 @@
 import React from "react";
 import ACTIVITIES from '../pages/OwnerActivities';
-
+import './Title.css'
 function Title() {
   const titles = ACTIVITIES[0].titleElement; // ACTIVITIES[0] içindeki başlıkları al
 
@@ -9,8 +9,8 @@ function Title() {
   ));
 
   return (
-    <div>
-      <ul>
+    <div className="List">
+      <ul className="Title">
         {listItemElements}
       </ul>
     </div>

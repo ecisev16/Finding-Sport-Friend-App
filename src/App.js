@@ -11,13 +11,13 @@ import OwnerActivitiesPage from './pages/OwnerActivities';
 import LogInPage from './pages/LogIn/LogIn';
 
 const router = createBrowserRouter([
-  {
+ /*    {
     path: '/',
     element: <LogInPage/>,
     errorElement: <ErrorPage/>,
-  },
+  }, */  
   {
-    path: '/root', 
+    path: '/', 
     element: <RootLayout/>,
     errorElement: <ErrorPage/>,
     children: [

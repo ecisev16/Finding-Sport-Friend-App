@@ -6,26 +6,44 @@ import './Profile.css'
  import PointExtractor from '../components/point'
 import AboutMe from '../components/AboutMe'
 import Title from '../components/Title';
-  
+import Name from '../components/Name'
 
 function ProfilePage(){
     return (
       <>
-        <div className="container-lg main-div">
+        <div className="container Profil">
           <div className="row">
-            <div className=" col pp-left">
+            <div className="col-2">
               <ProfilPhoto />
+              <Name />
               <PointExtractor />
             </div>
-          </div>
-          <div className=" col pp-center">
-            <AboutMe/>
-            <Title/>
-          </div>
-          <div className='col pp-right' >
-            SAĞ TARAF
+            <div className="col-10">
+              <AboutMe />
+              <br></br>
+              <br></br>
+              <p className="empty">İlgilediği Sporlar</p>
+              <Title className="Title"></Title>
+            </div>
           </div>
         </div>
+
+        <div className='container Activity'>
+
+            <div className='row'>
+                <div className='col-6'>
+                <Link to="duzenlenen-aktiviteler">
+                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
+                </Link>
+                </div>
+                <div className='col-6'>
+                <Link to="">
+                    <button className = "button" key="k2">Katılınan Aktiviteler</button>
+                </Link> 
+                </div>
+            </div>
+        </div>
+
       </>
     ); 
 }

@@ -7,11 +7,13 @@ const PointExtractor = () =>{
         fontStyle: "italic"
         
     };
-
+    const fontSize = "30px";
+        
+    
 
     return(
      <div>
-      <h4 style={textStyle}>{singlePoint.point}</h4>
+      <h4 style={{ fontSize: fontSize , textStyle: textStyle }}>{singlePoint.point}</h4>
     </div>
     );
     
