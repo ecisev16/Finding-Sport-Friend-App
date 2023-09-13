@@ -3,21 +3,31 @@ import ActivityList from '../components/ActivityList'
 import '../components/Button.css'
 import ProfilPhoto from '../components/ActivityProfilPhoto';
 import './Profile.css'
-
+ import PointExtractor from '../components/point'
+import AboutMe from '../components/AboutMe'
+import ElementOluştur from '../components/Title';
   
 
 function ProfilePage(){
-    return(
-        <>
-            <div className='main-div'>
-              <ProfilPhoto/>
-
-                 
-            </div>  
-        </>
-        
-        
-    ) 
+    return (
+      <>
+        <div className="container-lg main-div">
+          <div className="row">
+            <div className=" col pp-left">
+              <ProfilPhoto />
+              <PointExtractor />
+            </div>
+          </div>
+          <div className=" col pp-center">
+            <AboutMe/>
+            <ElementOluştur/>
+          </div>
+          <div className='col pp-right' >
+            5
+          </div>
+        </div>
+      </>
+    ); 
 }
 
 export default ProfilePage;

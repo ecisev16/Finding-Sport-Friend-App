@@ -7,24 +7,27 @@ const ACTIVITIES = [
     {
       photo: "../public/components/image/person1.jpg",
       id: 'e1',
-      title: 'Voleybol Maçı',
+      title: ['Voleybol','Rugby','Masa Tenisi'],
+      AboutMe:"adım mehmet yaş 28",
       point: 7.8,
       date: new Date(2020, 7, 14),
     },
     {
       id: 'e3',
-      title: 'Tenis Maçı',
+      title: ['Voleybol','Hentbol','Basketbol','Yüzme','Futbol'],
+      aboutMe:"adım fatma yaş 25",
       point: 8.6,
       date: new Date(2021, 2, 28),
     },
     {
-      id: 'e4',
-      title: 'Yoga Pratiği',
+      id: '',
+      title: ['Futbol','American Futbolu','Kayak','Masa Tenesi'],
+      aboutMe:"adım ayşe yaş 35",
       point: 6.8,
       date: new Date(2021, 5, 12),
     },
   ];
-function OwnerActivitiesPage(){
+/* function OwnerActivitiesPage(){
     return(
         <div className="expenses">
             <ActivityList activities = {ACTIVITIES}/>
@@ -32,6 +35,6 @@ function OwnerActivitiesPage(){
         
         
     ) 
-}
+} */
 
-export default OwnerActivitiesPage;
+export default ACTIVITIES;
