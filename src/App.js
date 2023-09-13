@@ -12,14 +12,13 @@ import LogInPage from './pages/LogIn/LogIn';
 import { Auth } from 'firebase/auth';
 
 const router = createBrowserRouter([
- /*    {
+  {
     path: '/',
     element: <LogInPage/>,
-    errorElement: <ErrorPage/>,
-  }, */  
-
+    
+  },
   {
-    path: '/', 
+    path: '/root', 
     element: <RootLayout/>,
 
     children: [
