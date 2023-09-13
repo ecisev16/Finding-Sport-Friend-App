@@ -9,23 +9,21 @@ import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import OwnerActivitiesPage from './pages/OwnerActivities';
 import LogInPage from './pages/LogIn/LogIn';
+import { Auth } from 'firebase/auth';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LogInPage/>,
-    errorElement: <ErrorPage/>,
+    
   },
   {
     path: '/root', 
     element: <RootLayout/>,
-    errorElement: <ErrorPage/>,
+
     children: [
       {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
-
-      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 
-      {path:'profil/katilinan-aktiviteler', }, 
 
       
     ]
@@ -35,7 +33,13 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  return <RouterProvider router={router}/>;
+  return (
+    <>
+      <RouterProvider router={router}/>;
+      
+    </>
+  )
+  
 }
 
 export default App;
