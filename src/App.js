@@ -8,10 +8,16 @@ import ExplorePage from './pages/Explore';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
 import OwnerActivitiesPage from './pages/OwnerActivities';
+import LogInPage from './pages/LogIn/LogIn';
 
 const router = createBrowserRouter([
   {
-    path: '/', 
+    path: '/',
+    element: <LogInPage/>,
+    errorElement: <ErrorPage/>,
+  },
+  {
+    path: '/root', 
     element: <RootLayout/>,
     errorElement: <ErrorPage/>,
     children: [
@@ -24,6 +30,7 @@ const router = createBrowserRouter([
       
     ]
   }
+  
   
 ])
 

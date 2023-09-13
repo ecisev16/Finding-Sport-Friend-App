@@ -6,12 +6,12 @@ function SideBarButton(props){
     return(
         <>
         <div className="sidebar-div">
-            <Link to="/profil" className="sidebar-link" style={{textDecoration: 'none'}}>
+            <Link to="/root/profil" className="sidebar-link" style={{textDecoration: 'none'}}>
                 <button >Profil</button>
                 
                 
             </Link>
-            <Link to="/" className="sidebar-link" style={{textDecoration: 'none'}}>
+            <Link to="/root" className="sidebar-link" style={{textDecoration: 'none'}}>
                 
                 <button >Keşfet</button>
                 

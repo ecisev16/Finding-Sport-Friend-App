@@ -1,11 +1,13 @@
-import {Link, useNavigate} from 'react-router-dom';
-import {auth, googleProvider} from "./Config/firebase";
+import React from 'react';
+
+import {auth, googleProvider} from '../../firebase/firebase';
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 import {useState} from "react";
 
   
 
 function LogInPage(){
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,6 +21,7 @@ function LogInPage(){
         }
         setEmail("");
         setPassword("");
+
         
     };
     return(
