@@ -1,14 +1,14 @@
 import React from "react";
 import ACTIVITIES from '../pages/OwnerActivities'
-
+import './AboutMe.css'
 
 const AboutMe = () =>{
     const AboutMe = ACTIVITIES[0]
 
-
+    
     return(
        
-    <div>
+    <div className="about-me">
         
          <h4>{AboutMe.AboutMe}</h4>
 

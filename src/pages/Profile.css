@@ -1,7 +1,7 @@
-.main-div{
-  display: flex;
 
-}
+
+
+
 .rounded-image {
     width: 200px; /* Resmin genişliği (istediğiniz değeri kullanabilirsiniz) */
     height: 200px; /* Resmin yüksekliği (istediğiniz değeri kullanabilirsiniz) */
@@ -19,4 +19,16 @@
 }
 
  
+.container{
+  border-style: solid;
+  border-color:rgb(252, 110, 2);
+  border-width: 5px;
+  padding: 50px;
+  border-radius: 50px;
+  margin: 50px;
+}
 
+.empty{
+  text-align: left;
+  font-size: 25px;
+}
