@@ -5,7 +5,7 @@ import ProfilPhoto from '../components/ActivityProfilPhoto';
 import './Profile.css'
  import PointExtractor from '../components/point'
 import AboutMe from '../components/AboutMe'
-import ElementOluştur from '../components/Title';
+import Title from '../components/Title';
   
 
 function ProfilePage(){
@@ -20,10 +20,10 @@ function ProfilePage(){
           </div>
           <div className=" col pp-center">
             <AboutMe/>
-            <ElementOluştur/>
+            <Title/>
           </div>
           <div className='col pp-right' >
-            5
+            SAĞ TARAF
           </div>
         </div>
       </>
