@@ -14,13 +14,18 @@ export const AuthProvider = (props) => {
  
   const login = async (data) => {
     setUser(data);
-    console.log(user, 'user')
+    console.log(data, 'user')
+    console.log(data, 'user')
     //navigate("/root");
   };
 
 
   const logout = () => {
-    setUser(null);
+    const data = null;
+    setUser(data);
+
+    console.log(user, "konnttroll LOGOUT")
+    console.log(user, "konnttroll LOGOUT")
     //navigate("/", { replace: true });
   };
 

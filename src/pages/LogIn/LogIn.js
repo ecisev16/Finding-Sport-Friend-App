@@ -17,14 +17,14 @@ function LogInPage(){
     const [validEmail, setValidEmail] = useState(false);
     const navigate = useNavigate();
     console.log(auth?.currentUser); 
-    const {login} = useAuth();
+    const ctx = useAuth();
     //console.log(login,'login')
     const signInHandler = async () =>{
         try{
             const res = await signInWithEmailAndPassword(auth, email, password)
             console.log(res);
 
-            login(res);
+            ctx.login(res);
 
         } catch (err){
             console.error(err); //incase something happend we will know cause we console.log
