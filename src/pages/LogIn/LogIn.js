@@ -5,7 +5,7 @@ import {useState} from "react";
 import { Form, Link, Navigate, useSearchParams} from 'react-router-dom';
 import classes from './AuthForm.module.css';
 import {useAuth} from './Authentication';
-
+import { useNavigate } from "react-router-dom";
   
 
 function LogInPage(){
@@ -15,7 +15,7 @@ function LogInPage(){
     const [searchParams, setSearchParams] = useSearchParams(); // şu an sadece searchParams lazım
     const isLogin = searchParams.get('mode')==='login'
     const [validEmail, setValidEmail] = useState(false);
-
+    const navigate = useNavigate();
     console.log(auth?.currentUser); 
     const {login} = useAuth();
     //console.log(login,'login')
@@ -25,12 +25,13 @@ function LogInPage(){
             console.log(res);
 
             login(res);
+
         } catch (err){
             console.error(err); //incase something happend we will know cause we console.log
         }
         setEmail("");
         setPassword("");
-
+        navigate("../root");
         
     };
     
@@ -48,7 +49,7 @@ function LogInPage(){
     };
     return(
         <>
-            <Form className={classes.form}>
+            <div>
                 <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
                 <p>
                 <label htmlFor="email">Email</label>
@@ -85,7 +86,7 @@ function LogInPage(){
                 
                
                 </div>
-            </Form>
+            </div>
             
         </>
         
