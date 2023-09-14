@@ -10,19 +10,19 @@ export const AuthProvider = (props) => {
     //<Footer />
 //</AuthProvider>   => { children }
   const [user, setUser] = useLocalStorage("user", null);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
  
   const login = async (data) => {
     setUser(data.email);
     console.log(user, 'user')
-    navigate("/root");
+    //navigate("/root");
   };
 
 
   const logout = () => {
     setUser(null);
-    navigate("/", { replace: true });
+    //navigate("/", { replace: true });
   };
 
   {/* 
