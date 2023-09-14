@@ -4,7 +4,7 @@ import {createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut} fro
 import {useState} from "react";
 import { Form, Link, Navigate, useSearchParams} from 'react-router-dom';
 import classes from './AuthForm.module.css';
-
+import {useAuth} from './Authentication';
 
   
 
@@ -17,11 +17,14 @@ function LogInPage(){
     const [validEmail, setValidEmail] = useState(false);
 
     console.log(auth?.currentUser); 
-
+    const {login} = useAuth();
+    //console.log(login,'login')
     const signInHandler = async () =>{
         try{
             const res = await signInWithEmailAndPassword(auth, email, password)
-            console.log(res)
+            console.log(res);
+
+            login(res);
         } catch (err){
             console.error(err); //incase something happend we will know cause we console.log
         }
@@ -45,7 +48,7 @@ function LogInPage(){
     };
     return(
         <>
-            <Form method="post" className={classes.form}>
+            <Form className={classes.form}>
                 <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
                 <p>
                 <label htmlFor="email">Email</label>
@@ -77,9 +80,6 @@ function LogInPage(){
                     >
                         Save
                     </button>
-                    {validEmail && (
-          <Navigate to="../root" replace={true} />
-        )}
                 {/* </Link> */}
                 
                 

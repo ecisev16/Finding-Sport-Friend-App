@@ -10,6 +10,9 @@ import RootLayout from './pages/Root';
 import OwnerActivitiesPage from './pages/OwnerActivities';
 import LogInPage from './pages/LogIn/LogIn';
 import { Auth } from 'firebase/auth';
+import  ProtectedRoute  from './pages/LogIn/ProtectedRoute';
+import { AuthProvider } from './pages/LogIn/Authentication';
+
 
 const router = createBrowserRouter([
   {
@@ -19,8 +22,10 @@ const router = createBrowserRouter([
   },
   {
     path: '/root', 
-    element: <RootLayout/>,
-
+    element: 
+      <ProtectedRoute>
+        <RootLayout/>
+      </ProtectedRoute>,
     children: [
       {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
@@ -35,7 +40,10 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <RouterProvider router={router}/>;
+    
+      <RouterProvider router={router}/>
+    
+      
       
     </>
   )
