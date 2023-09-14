@@ -1,9 +1,9 @@
 import React from "react";
-import ACTIVITIES from '../pages/OwnerActivities'
+import {dummyData} from '../pages/ProfilDummy'
 import './AboutMe.css'
 
 const AboutMe = () =>{
-    const AboutMe = ACTIVITIES[0]
+    const AboutMe = dummyData[0]
 
     
     return(

@@ -1,14 +1,14 @@
 import React from "react";
-import ACTIVITIES from '../pages/OwnerActivities'
-
+import {dummyData} from '../pages/ProfilDummy'
+import './Name.css'
 const Name = () =>{
 
-    const Name = ACTIVITIES[0]
+    const Name = dummyData[0]
 
-    const fontSize = "20px";
+    
     return(
         <div>
-            <span style={{fontSize:fontSize}} >
+            <span className="Name" >
                 {Name.nameSurname}
             </span>
         </div>

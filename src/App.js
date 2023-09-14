@@ -3,11 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ExplorePage from './pages/Explore';
 import ProfilePage from './pages/Profile';
 import RootLayout from './pages/Root';
-import OwnerActivitiesPage from './pages/OwnerActivities';
+import {OwnerActivitiesPage} from './pages/OwnerActivities';
 import LogInPage from './pages/LogIn/LogIn';
-
 import  ProtectedRoute  from './pages/LogIn/ProtectedRoute';
-
+import { Auth } from 'firebase/auth';
+import Activity from './components/Activity';
 
 
 const router = createBrowserRouter([
@@ -27,7 +27,8 @@ const router = createBrowserRouter([
     children: [
       {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
-
+      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 
+      {path:'profil/katilinan-aktiviteler', }, 
       
     ]
   }
