@@ -10,22 +10,7 @@ const ActivityList = (props) =>{
 
     return (
     <ul className = "activity-list">
-        {props.activities.map((actvy) => (
-            <Activity
-                key = {actvy.id}
-                title = {actvy.title}
-                
-                date = {actvy.date}
-            />
-        ))}
-        {props.activities.map((actvy) => (
-            <Activity
-                key = {actvy.id}
-                title = {actvy.title}
-                
-                date = {actvy.date}
-            />
-        ))}
+1
         {props.activities.map((actvy) => (
             <Activity
                 key = {actvy.id}

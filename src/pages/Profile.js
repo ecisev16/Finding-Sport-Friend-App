@@ -1,9 +1,10 @@
-import {Link, useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ActivityList from '../components/ActivityList'
 import '../components/Button.css'
+import Activity from '../components/Activity';
 import ProfilPhoto from '../components/ActivityProfilPhoto';
 import './Profile.css'
- import PointExtractor from '../components/point'
+import PointExtractor from '../components/point'
 import AboutMe from '../components/AboutMe'
 import Title from '../components/Title';
 import Name from '../components/Name'
@@ -11,6 +12,7 @@ import Name from '../components/Name'
 function ProfilePage(){
     return (
       <>
+      
         <div className="container Profil">
           <div className="row">
             <div className="col-2">
@@ -27,12 +29,14 @@ function ProfilePage(){
             </div>
           </div>
         </div>
+      
+         
 
         <div className='container Activity'>
 
             <div className='row'>
                 <div className='col-6'>
-                <Link to="duzenlenen-aktiviteler">
+                <Link to="/root/profil/duzenlenen-aktiviteler">
                     <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
                 </Link>
                 </div>

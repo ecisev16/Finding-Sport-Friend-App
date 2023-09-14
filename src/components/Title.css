@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 .Title{
-    list-style-type: square;
+    list-style-type: none;
     justify-content: left;
     text-align: left;
-    font-size:20px ;
+    font-size:25px ;
+    font-family: 'poppins' ;
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import ACTIVITIES from '../pages/OwnerActivities';
+import {dummyData} from '../pages/ProfilDummy';
 import './Title.css'
 function Title() {
-  const titles = ACTIVITIES[0].titleElement; // ACTIVITIES[0] içindeki başlıkları al
+  const titles = dummyData[0].titleElement; 
 
   const listItemElements = titles.map((title, index) => (
     <li key={index}>{title}</li>

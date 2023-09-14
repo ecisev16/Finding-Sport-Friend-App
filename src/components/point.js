@@ -1,19 +1,14 @@
 import React from "react";
-import ACTIVITIES from '../pages/OwnerActivities'
-
+import {dummyData} from '../pages/ProfilDummy'
+import './point.css'
 const PointExtractor = () =>{
-    const singlePoint = ACTIVITIES[0]
-    const textStyle = {
-        fontStyle: "italic"
-        
-    };
-    const fontSize = "30px";
-        
+    const singlePoint = dummyData[0]
+  
     
 
     return(
      <div>
-      <h4 style={{ fontSize: fontSize , textStyle: textStyle }}>{singlePoint.point}</h4>
+      <h4 className="Point"> {singlePoint.point}</h4>
     </div>
     );
     
