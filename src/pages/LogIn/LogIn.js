@@ -6,7 +6,7 @@ import { Form, Link, Navigate, useSearchParams} from 'react-router-dom';
 import classes from './AuthForm.module.css';
 import {useAuth} from './Authentication';
 import { useNavigate } from "react-router-dom";
-  
+import './LogIn.css';
 
 function LogInPage(){
 
@@ -44,14 +44,13 @@ function LogInPage(){
         setValidEmail(true);
         setEmail("");
         setPassword("");
-        
-        
-    };
+    }
     return(
         <>
-            <div>
+            <div className='background'>
                 <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
                 <p>
+                    
                 <label htmlFor="email">Email</label>
                 <input 
                     type = "email"   // input type. bu önemli çünkü ona göre bir görüntü oluşturuyor react
@@ -93,5 +92,6 @@ function LogInPage(){
         
     ) 
 }
+
 
 export default LogInPage;
