@@ -1,4 +1,6 @@
 import {Link} from 'react-router-dom';
+import {auth} from "../../../firebase/firebase";
+import {signOut} from "firebase/auth";
 import './SideBarButton.css'
 import {useAuth} from '../../../pages/LogIn/Authentication';
 import { useNavigate } from "react-router-dom";
@@ -9,8 +11,9 @@ function SideBarButton(props){
     const navigate = useNavigate();
     const logoutHandler = async () =>{
         try{
-            
+            signOut(auth)
             ctx.logout();
+            console.log(ctx.user, "LOGOUT KONTROL");
             
 
         } catch (err){

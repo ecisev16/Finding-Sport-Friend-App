@@ -8,12 +8,13 @@ import LogInPage from './pages/LogIn/LogIn';
 import  ProtectedRoute  from './pages/LogIn/ProtectedRoute';
 import { Auth } from 'firebase/auth';
 import Activity from './components/Activity';
-
+import StorePage from "./pages/Store";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <LogInPage/>,
+    //element: <StorePage/>
     
   },
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
-      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/>}, 
+      {path:'profil/duzenlenen-aktiviteler', element:<StorePage/>}, //<OwnerActivitiesPage/>
       {path:'profil/katilinan-aktiviteler', }, 
       
     ]
