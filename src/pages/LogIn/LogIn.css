@@ -19,9 +19,9 @@ body {
 .container-Login {
   justify-content: center;
   text-align: center;
-  display: flex; /* Flex kutusu olarak düzeltilmeli */
-  align-items: center; /* Dikey hizalama eklenmeli */
-  height: 100vh; /* Sayfanın tamamını kapla */
+  display: flex; 
+  align-items: center; 
+  height: 100vh; 
 }
 
 .LoginSave {
@@ -49,7 +49,7 @@ body {
   border: none;
   border-bottom: 1px solid rgba(252, 110, 2);
   background-color: transparent;
-  margin-bottom: 20px; /* İki input arasına boşluk ekledim */
+  margin-bottom: 20px; 
   outline: none;
 }
 
@@ -57,7 +57,7 @@ body {
 
 
 .card {
-  background-color: #ffffff;
+  
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
   padding: 20px;
   border-radius: 2px;
