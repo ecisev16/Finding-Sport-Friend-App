@@ -1,9 +1,75 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
-
 body {
-    background-image: url('./loginImage/sports-tools.jpg'); /* Resmin yolu, public klasörüne göre belirtilmelidir */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Arka planın sabit kalmasını sağlar */
-  }
+  background-image: url('./loginImage/sports-tools.jpg'); 
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  margin: 0; 
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.denemeclass {
+  font-size: 50px;
+}
+
+.container-Login {
+  justify-content: center;
+  text-align: center;
+  display: flex; /* Flex kutusu olarak düzeltilmeli */
+  align-items: center; /* Dikey hizalama eklenmeli */
+  height: 100vh; /* Sayfanın tamamını kapla */
+}
+
+.LoginSave {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; 
+}
+
+.LoginSave a {
+  margin: 0 20px; 
+  color: black;
+  text-decoration: none;
+}
+
+.LoginSave button {
+  margin: 0 10px; 
+  border: none;
+  background-color: transparent;
+}
+
+.EmailButton,
+.PasswordButton {
+  width: 100%; 
+  border: none;
+  border-bottom: 1px solid rgba(252, 110, 2);
+  background-color: transparent;
+  margin-bottom: 20px; /* İki input arasına boşluk ekledim */
+  outline: none;
+}
+
+
+
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  padding: 20px;
+  border-radius: 2px;
+  margin-top: -175px;
+  text-align: center;
+  max-width: 500px; 
+  height: 500px;
+ 
+}
+
+
+.SaveButton:hover{
+ 
+  cursor: pointer;
+}

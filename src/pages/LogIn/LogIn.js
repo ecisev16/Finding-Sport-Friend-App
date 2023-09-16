@@ -45,52 +45,48 @@ function LogInPage(){
         setEmail("");
         setPassword("");
     }
-    return(
+    return (
         <>
-            <div className='background'>
-                <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
-                <p>
-                    
-                <label htmlFor="email">Email</label>
-                <input 
-                    type = "email"   // input type. bu önemli çünkü ona göre bir görüntü oluşturuyor react
-                    value = {email}  // bu işlem yaptıktan sonra girdi yerini temizlemek için kullanılacak
-                    placeholder = "Email.."  //bu input yerindeki arkadaki silinik yazı olacak
-                    onChange = {(e)=>setEmail(e.target.value)}
-                />
-                </p>
-                <p>
-                <label htmlFor="image">Password</label>
-                <input 
-                    type = "password"
-                    value = {password}
-                    placeholder = "Password.."
-                    onChange = {(e)=>setPassword(e.target.value)}
-                />
-                </p>
-                
-                <div className={classes.actions}>
-                <Link to={`?mode=${isLogin ? 'signup' : 'login'}`}>
-                    {isLogin ? 'Create new user' : 'Login'}
-                </Link>
-                
-                {/* <Link to={validEmail ? "../root" : ""} style={{textDecoration: 'none'}}> */}
-                    <button
-                        onClick={isLogin ? signInHandler : signUpHandler}
-                    >
-                        Save
-                    </button>
-                {/* </Link> */}
-                
-                
-               
-                </div>
+        <div className="container-Login">
+          <div className="card">
+            <h1>{isLogin ? "Log in" : "Create a new user"}</h1>
+            <p>
+              <label className='EmailWord' htmlFor="email">Email</label> <br />
+              <input 
+                className="EmailButton"
+                type="email"
+                value={email}
+                placeholder="Email.."
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </p>
+            <p>
+              <label className='PasswordWord' htmlFor="password">Password</label> <br />
+              <input
+                className="PasswordButton"
+                type="password"
+                value={password}
+                placeholder="Password.."
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </p>
+            <div className="LoginSave">
+              <Link to={`?mode=${isLogin ? "signup" : "login"}`}>
+                {isLogin ? "Create new user" : "Login"}
+              </Link>
+              <button className='SaveButton' onClick={isLogin ? signInHandler : signUpHandler}>
+                Save
+              </button>
             </div>
+          </div>
+          </div>
+          
+           
             
-        </>
+            
         
-        
-    ) 
+      </>
+    ); 
 }
 
 
