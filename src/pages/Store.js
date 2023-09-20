@@ -6,13 +6,9 @@ import {
     doc,
     onSnapshot,
     updateDoc,
-    setDoc,
     deleteDoc,
     collection,
-    serverTimestamp,
-    getDocs,
-    query,
-    where,
+   
 } from "firebase/firestore";
 import {ref, uploadBytes} from "firebase/storage";
 
@@ -93,6 +89,7 @@ export const StorePage = () =>{
 
     return(
         <>
+        
             <div>
                 <input 
                     placeholder="Activity title" 
@@ -108,8 +105,8 @@ export const StorePage = () =>{
                 
             </div>
             <div>
-                {activityList.map((act)=>(
-                    <div key={act.id}>
+                {activityList.map((act, index)=>(
+                    <div key={index}>
                         <h1>
                             {act.title}
                             

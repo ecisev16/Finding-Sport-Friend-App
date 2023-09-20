@@ -37,13 +37,15 @@ function LogInPage(){
     
     const signUpHandler = async () =>{
         try{
-            await createUserWithEmailAndPassword(auth, email, password)
+          const res = await createUserWithEmailAndPassword(auth, email, password)
+            ctx.login(res);
         } catch (err){
             console.error(err); //incase something happend we will know cause we console.log
         }
         setValidEmail(true);
         setEmail("");
         setPassword("");
+        navigate("../root");
     }
     return (
         <>

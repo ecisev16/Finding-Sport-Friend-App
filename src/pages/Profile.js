@@ -29,7 +29,8 @@ function ProfilePage(){
     const [profileList, setProfileList] = useState([]);
     const profileCollectionRef = collection(db, "Profiles");
     const [loading, setLoading] = useState(false);
-    //let loading;
+    //let loading
+    
     useEffect(() => {
         
         //loading = true
