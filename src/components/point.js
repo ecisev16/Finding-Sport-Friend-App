@@ -1,14 +1,14 @@
 import React from "react";
 import {dummyData} from '../pages/ProfilDummy'
 import './point.css'
-const PointExtractor = () =>{
+const PointExtractor = (props) =>{
     const singlePoint = dummyData[0]
   
     
 
     return(
      <div>
-      <h4 className="Point"> {singlePoint.point}</h4>
+      <h4 className="Point"> {props.point}</h4>
     </div>
     );
     

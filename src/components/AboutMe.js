@@ -2,7 +2,7 @@ import React from "react";
 import {dummyData} from '../pages/ProfilDummy'
 import './AboutMe.css'
 
-const AboutMe = () =>{
+const AboutMe = (props) =>{
     const AboutMe = dummyData[0]
 
     
@@ -10,7 +10,7 @@ const AboutMe = () =>{
        
     <div className="about-me">
         
-         <h4>{AboutMe.AboutMe}</h4>
+         <h4>{props.aboutMe}</h4>
 
     </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {dummyData} from '../pages/ProfilDummy'
 import './Name.css'
-const Name = () =>{
+const Name = (props) =>{
 
     const Name = dummyData[0]
 
@@ -9,7 +9,7 @@ const Name = () =>{
     return(
         <div>
             <span className="Name" >
-                {Name.nameSurname}
+                {props.name}
             </span>
         </div>
     )

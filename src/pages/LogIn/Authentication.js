@@ -18,13 +18,9 @@ export const AuthProvider = (props) => {
     console.log(data, 'user')
     //navigate("/root");
   };
-
-
   const logout = () => {
     const data = null;
     setUser(data);
-
-    console.log(user, "konnttroll LOGOUT")
     console.log(user, "konnttroll LOGOUT")
     //navigate("/", { replace: true });
   };

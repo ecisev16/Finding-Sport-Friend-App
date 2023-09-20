@@ -4,7 +4,7 @@ import {db, auth, storage} from "../firebase/firebase";
 import {getDocs, collection, addDoc, deleteDoc, doc, updateDoc} from "firebase/firestore";
 import {ref, uploadBytes} from "firebase/storage";
 
-function StorePage(){
+export const StorePage = () =>{
     const [activityList, setActivityList] = useState([]);
     const [newActivityTile, setNewActivityTitle] = useState("");
     const [newActivityDate, setNewActivityDate] = useState(0);
@@ -18,12 +18,17 @@ function StorePage(){
             
         try{
             const data = await getDocs(activityCollectionRef);
-            const filteredData = data.docs.map((doc) => ({
+            //console.log(data.docs,'data')
+            const filteredData = data.docs
+            //.filter((doc) => doc.userId === auth?.currentUser?.uid) 
+            // console.log(data.docs[0], "filteredData");
+            .map((doc) => ({
                 ...doc.data(),
-                id: doc.id
-            }))
-            //console.log(filteredData);
-            setActivityList(filteredData);
+                id: doc.id,
+            }));
+            const doubleFiltered = filteredData.filter((doc) => doc.userId === auth?.currentUser?.uid) 
+            console.log(doubleFiltered);
+            setActivityList(doubleFiltered);
         }catch (err){
             console.log(err);
         }
@@ -90,6 +95,7 @@ function StorePage(){
                     <div key={act.id}>
                         <h1>
                             {act.title}
+                            
                         </h1>
                         <button onClick={() => deleteActivity(act.id)}>Delete Activity</button> {/*{() => deleteActivity(act.id)} garip notasyon ama bu şekilde olmalı.*/}
                         <input 
