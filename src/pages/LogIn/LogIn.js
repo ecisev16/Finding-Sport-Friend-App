@@ -49,7 +49,7 @@ function LogInPage(){
         <>
         <div className="container-Login">
           <div className="card">
-            <h1>{isLogin ? "Log in" : "Create a new user"}</h1>
+            <h1>{isLogin ? "Login" : "Sign Up"}</h1>
             <p>
               <label className='EmailWord' htmlFor="email">Email</label> <br />
               <input 
@@ -72,10 +72,10 @@ function LogInPage(){
             </p>
             <div className="LoginSave">
               <Link to={`?mode=${isLogin ? "signup" : "login"}`}>
-                {isLogin ? "Create new user" : "Login"}
+                {isLogin ? "Sing Up" : "Login"}
               </Link>
               <button className='SaveButton' onClick={isLogin ? signInHandler : signUpHandler}>
-                Save
+                Tamam
               </button>
             </div>
           </div>

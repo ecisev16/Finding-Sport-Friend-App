@@ -40,11 +40,11 @@ function SideBarButton(props){
                 
             </Link>
 
-            <Link className="sidebar-link" style={{textDecoration: 'none'}}>
+            <div className="sidebar-link" style={{textDecoration: 'none'}}>
                 
                 <button onClick={logoutHandler} className="sidebar-link">Logout</button>
                 
-            </Link>
+            </div>
             
             
         </div>

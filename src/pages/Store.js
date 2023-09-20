@@ -1,50 +1,66 @@
 import { useState, useEffect } from "react";
 
 import {db, auth, storage} from "../firebase/firebase";
-import {getDocs, collection, addDoc, deleteDoc, doc, updateDoc} from "firebase/firestore";
+import {
+    addDoc,
+    doc,
+    onSnapshot,
+    updateDoc,
+    setDoc,
+    deleteDoc,
+    collection,
+    serverTimestamp,
+    getDocs,
+    query,
+    where,
+} from "firebase/firestore";
 import {ref, uploadBytes} from "firebase/storage";
 
 export const StorePage = () =>{
     const [activityList, setActivityList] = useState([]);
     const [newActivityTile, setNewActivityTitle] = useState("");
     const [newActivityDate, setNewActivityDate] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     const [updatedTitle, setUpdatedTitle] = useState("");
 
     const [fileUpload, setFileUpload] = useState(null);
     
     const activityCollectionRef = collection(db, "activities");
-    const getActivityList = async () => {
-            
-        try{
-            const data = await getDocs(activityCollectionRef);
-            //console.log(data.docs,'data')
-            const filteredData = data.docs
-            //.filter((doc) => doc.userId === auth?.currentUser?.uid) 
-            // console.log(data.docs[0], "filteredData");
-            .map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }));
-            const doubleFiltered = filteredData.filter((doc) => doc.userId === auth?.currentUser?.uid) 
-            console.log(doubleFiltered);
-            setActivityList(doubleFiltered);
-        }catch (err){
-            console.log(err);
-        }
-        
-    }
+
+    useEffect(() => {
+    
+        setLoading(true);
+        //const unsub = onSnapshot(q, (querySnapshot) => {
+        const unsub = onSnapshot(activityCollectionRef, (querySnapshot) => {
+          const items = [];
+          querySnapshot.forEach((doc) => {
+            items.push(doc.data());
+          });
+          const doubleFiltered = items.filter((doc) => doc.userId === auth?.currentUser?.uid) 
+          setActivityList(doubleFiltered);
+          setLoading(false);
+        });
+        return () => {
+          unsub();
+        };
+    
+        // eslint-disable-next-line
+      }, []);
 
     const deleteActivity = async (id) => {
         const activityDoc = doc(db, "activities", id);
         await deleteDoc(activityDoc);
-        getActivityList();
+        //getActivityList();
     }
 
     const UpdateActivity = async (id) => {
+        const updatedActivity = {
+            title: updatedTitle
+        }
         const activityDoc = doc(db, "activities", id);
-        await updateDoc(activityDoc, {title: updatedTitle});
-        getActivityList();
+        await updateDoc(activityDoc, updatedActivity);
+        //getActivityList();
     }
 
     const uploadFile = async () => {
@@ -58,15 +74,16 @@ export const StorePage = () =>{
         
     }
 
-    useEffect(()=>{
-        
-        getActivityList();
-    },[])
+    
 
     const onSubmitActivity = async () => {
+        const newActivity = {
+            title: newActivityTile,
+            userId: auth?.currentUser?.uid
+        }
         try{
-            await addDoc(activityCollectionRef, {title: newActivityTile, userId: auth?.currentUser?.uid})
-            getActivityList();
+            await addDoc(activityCollectionRef, newActivity)
+            //getActivityList();
         }catch(err){
             console.log(err)
         }

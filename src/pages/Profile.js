@@ -11,60 +11,77 @@ import Name from '../components/Name';
 import { useState, useEffect } from "react";
 
 import {db, auth, storage} from "../firebase/firebase";
-import {getDocs, collection, addDoc, deleteDoc, doc, updateDoc} from "firebase/firestore";
+import {
+    addDoc,
+    doc,
+    onSnapshot,
+    updateDoc,
+    setDoc,
+    deleteDoc,
+    collection,
+    serverTimestamp,
+    getDocs,
+    query,
+    where,
+} from "firebase/firestore";
 
 function ProfilePage(){
     const [profileList, setProfileList] = useState([]);
     const profileCollectionRef = collection(db, "Profiles");
-    const getProfileList = async () => {
-            
-        try{
-            const data = await getDocs(profileCollectionRef);
-            //console.log(data.docs,'data')
-            const filteredData = data.docs
-            //.filter((doc) => doc.userId === auth?.currentUser?.uid) 
-            // console.log(data.docs[0], "filteredData");
-            .map((doc) => ({
-                ...doc.data(),
-                id: doc.id,
-            }));
-            const doubleFiltered = filteredData.filter((doc) => doc.userID === auth?.currentUser?.uid) 
-            console.log(doubleFiltered);
-            
+    const [loading, setLoading] = useState(false);
+    //let loading;
+    useEffect(() => {
+        
+        //loading = true
+        setLoading(true);
+        
+        const unsub = onSnapshot(profileCollectionRef, (querySnapshot) => {
+            const items = [];
+            querySnapshot.forEach((doc) => {
+                items.push(doc.data());
+            });
+            const doubleFiltered = items.filter((doc) => doc.userID === auth?.currentUser?.uid)
             setProfileList(doubleFiltered);
-            const aaaa = profileList[0].Sports;
-            console.log(aaaa, "SPORTS ARRAY VAR MI")
-        }catch (err){
-            console.log(err);
-        }
+            //loading = false
+            setLoading(false);
+        });
+
         
-    }
+        return () => {
+          unsub();
+        };
     
-
-    useEffect(()=>{
         
-        getProfileList();
-    },[])
+      }, []);
 
+    //   const aaaa = profileList.length !== 0 && profileList[0]?.Sports;
+    profileList.length !== 0 && console.log( profileList[0].Sports, "SPORTS ARRAY VAR MI")
     return (
       <>
-      
-        <div className="container Profil">
-          <div className="row">
-            <div className="col-2">
-              <ProfilPhoto />
-              <Name name = {profileList[0]?.NameSurname}/>
-              <PointExtractor  point = {profileList[0]?.Point}/>
-            </div>
-            <div className="col-10">
-              <AboutMe aboutMe = {profileList[0]?.AboutMe}/>
-              <br></br>
-              <br></br>
-              <p className="empty">İlgilediği Sporlar</p>
-              <Title sports = {profileList[0]?.Sports} className="Title"></Title>
-            </div>
-          </div>
+        <div>
+            {!loading && profileList.length > 0 &&
+                <div className="container Profil">
+                    <div className="row">
+                        <div className="col-2">
+                            <ProfilPhoto />
+                            <Name name = {profileList[0]?.NameSurname}/>
+                            <PointExtractor  point = {profileList[0]?.Point}/>
+                        </div>
+                    </div>
+                    <div className="col-10">
+                        <AboutMe aboutMe = {profileList[0]?.AboutMe}/>
+                        <br></br>
+                        <br></br>
+                        <p className="empty">İlgilediği Sporlar</p>
+                        <Title sports = {profileList.length !== 0 && profileList[0].Sports} className="Title"></Title>
+                    </div>
+                </div>
+
+            }
+            {loading && <h1 className="container Profil">Yükleniyor</h1>}
         </div>
+        
+        
       
          
 
@@ -89,35 +106,3 @@ function ProfilePage(){
 }
 
 export default ProfilePage;
-
-{/*<>
-            <h1> ...'s Profile </h1>
-            <ul>
-                {ACTIVITIES.map((prod)=>(
-                    <li key={prod.id}>
-                        <Link to={prod.id}>{prod.title}</Link>
-                    </li>
-                    
-                ))}
-            </ul>
-        </>*/}
-
-
-
-        {/* <div>
-                    <h1> ...'s Profile</h1>
-                </div> 
-                <div className="rounded-image">
-                    <img  src="image/img.jpg" alt="" className="image"></img>
-                </div>
-            </div>
-            
-
-             <div>
-                <Link to="duzenlenen-aktiviteler">
-                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
-                </Link>
-
-                <Link to="">
-                    <button className = "button" key="k2">Katılınan Aktiviteler</button>
-                </Link>                */}
