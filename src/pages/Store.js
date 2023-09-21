@@ -31,7 +31,8 @@ export const StorePage = () =>{
         const unsub = onSnapshot(activityCollectionRef, (querySnapshot) => {
           const items = [];
           querySnapshot.forEach((doc) => {
-            items.push(doc.data());
+            items.push({...doc.data(), id: doc.id});
+            
           });
           const doubleFiltered = items.filter((doc) => doc.userId === auth?.currentUser?.uid) 
           setActivityList(doubleFiltered);

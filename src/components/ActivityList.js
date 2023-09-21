@@ -21,7 +21,7 @@ const ActivityList = (props) =>{
     const [newActivityDate, setNewActivityDate] = useState(0);
     const [loading, setLoading] = useState(false);
 
-    const [updatedTitle, setUpdatedTitle] = useState("");
+    
 
     const [fileUpload, setFileUpload] = useState(null);
     
@@ -34,7 +34,7 @@ const ActivityList = (props) =>{
         const unsub = onSnapshot(activityCollectionRef, (querySnapshot) => {
           const items = [];
           querySnapshot.forEach((doc) => {
-            items.push(doc.data());
+            items.push({...doc.data(), id: doc.id});
           });
           const doubleFiltered = items.filter((doc) => doc.userId === auth?.currentUser?.uid) 
           setActivityList(doubleFiltered);
@@ -47,20 +47,9 @@ const ActivityList = (props) =>{
         // eslint-disable-next-line
       }, []);
 
-    const deleteActivity = async (id) => {
-        const activityDoc = doc(db, "activities", id);
-        await deleteDoc(activityDoc);
-        //getActivityList();
-    }
+    
 
-    const UpdateActivity = async (id) => {
-        const updatedActivity = {
-            title: updatedTitle
-        }
-        const activityDoc = doc(db, "activities", id);
-        await updateDoc(activityDoc, updatedActivity);
-        //getActivityList();
-    }
+    
 
     const uploadFile = async () => {
         if(!fileUpload) return;
@@ -115,16 +104,9 @@ const ActivityList = (props) =>{
             <div>
                 {activityList.map((act, index) => (
                     <div key={index}>
-                        <h1>
-                            {act.title}
-
-                        </h1>
-                        <button onClick={() => deleteActivity(act.id)}>Delete Activity</button> {/*{() => deleteActivity(act.id)} garip notasyon ama bu şekilde olmalı.*/}
-                        <input
-                            placeholder="new Title"
-                            onChange={(e) => setUpdatedTitle(e.target.value)}
-                        ></input>
-                        <button onClick={() => UpdateActivity(act.id)}>update</button>
+                        <Activity
+                            activ = {act}
+                        />
                     </div>
                 ))}
             </div></>}
@@ -155,3 +137,14 @@ export default ActivityList;
     //        />
     //    ))}
     //</ul>
+
+    {/*<h1>
+        {act.title}
+
+    </h1>
+    <button onClick={() => deleteActivity(act.id)}>Delete Activity</button> 
+    <input
+        placeholder="new Title"
+        onChange={(e) => setUpdatedTitle(e.target.value)}
+    ></input>
+    <button onClick={() => UpdateActivity(act.id)}>update</button> */}
