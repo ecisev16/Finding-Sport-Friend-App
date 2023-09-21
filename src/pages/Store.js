@@ -90,40 +90,45 @@ export const StorePage = () =>{
     return(
         <>
         
-            <div>
-                <input 
-                    placeholder="Activity title" 
+            {!loading && activityList.length > 0 &&<><div>
+                <input
+                    placeholder="Activity title"
                     type="text"
-                    onChange = {(e) => setNewActivityTitle(e.target.value) }
+                    onChange={(e) => setNewActivityTitle(e.target.value)}
                 ></input>
-                <input 
-                placeholder="Activity date" 
-                type="date"
-                onChange = {(e) => setNewActivityDate(Number(e.target.value))} //e.target.checked - bu checkbox için kullanılır.
+                <input
+                    placeholder="Activity date"
+                    type="date"
+                    onChange={(e) => setNewActivityDate(Number(e.target.value))} //e.target.checked - bu checkbox için kullanılır.
                 ></input>
-                <button onClick = {onSubmitActivity}>Submit Activity</button>
-                
+                <button onClick={onSubmitActivity}>Submit Activity</button>
+
             </div>
             <div>
-                {activityList.map((act, index)=>(
+                {activityList.map((act, index) => (
                     <div key={index}>
                         <h1>
                             {act.title}
-                            
+
                         </h1>
                         <button onClick={() => deleteActivity(act.id)}>Delete Activity</button> {/*{() => deleteActivity(act.id)} garip notasyon ama bu şekilde olmalı.*/}
-                        <input 
-                        placeholder="new Title" 
-                        onChange = {(e) => setUpdatedTitle(e.target.value)}
+                        <input
+                            placeholder="new Title"
+                            onChange={(e) => setUpdatedTitle(e.target.value)}
                         ></input>
-                        <button onClick={() =>UpdateActivity(act.id)}>update</button>
+                        <button onClick={() => UpdateActivity(act.id)}>update</button>
                     </div>
                 ))}
-            </div>
+            </div></>}
+            {loading && <h1>Yükleniyor</h1>}
+
+                
             <div>
                 <input type="file" onChange={(e) => setFileUpload(e.target.files[0])}></input>
                 <button onClick = {uploadFile}>Upload File</button>
             </div>
+            
+                
         </>
             
         

@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {index:true, element: <ExplorePage/>}, 
       {path:'profil', element: <ProfilePage/>},
-      {path:'profil/duzenlenen-aktiviteler', element:<StorePage/>}, //<OwnerActivitiesPage/>
+      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/> }, //<OwnerActivitiesPage/> <StorePage/>
       {path:'profil/katilinan-aktiviteler', }, 
       
     ]

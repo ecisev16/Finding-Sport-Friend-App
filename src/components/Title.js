@@ -2,10 +2,12 @@ import React from "react";
 //import {dummyData} from '../pages/ProfilDummy';
 import './Title.css'
 function Title(props) {
-  //const titles = dummyData[0].titleElement; 
+  //const titles = dummyData[0].titleElement;
+   
   console.log(props.sports, "bize geçti mi?")
-  const listItemElements = props.sports.map((title, index) => (
-    <li key={index}>{title}</li>
+  const titles = props.sports
+  const listItemElements = titles.map((title) => (
+    <li >{title}</li>
   ));
 
   return (

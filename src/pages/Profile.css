@@ -29,5 +29,6 @@
 
 .empty{
   text-align: left;
-  font-size: 25px;
+  font-weight: bold;
+  text-decoration: underline;
 }

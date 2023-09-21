@@ -8,7 +8,7 @@ const PointExtractor = (props) =>{
 
     return(
      <div>
-      <h4 className="Point"> {props.point}</h4>
+      <h4 className="Point"> Puan: {props.point}</h4>
     </div>
     );
     

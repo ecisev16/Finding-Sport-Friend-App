@@ -68,14 +68,16 @@ function ProfilePage(){
                             <Name name = {profileList[0]?.NameSurname}/>
                             <PointExtractor  point = {profileList[0]?.Point}/>
                         </div>
-                    </div>
-                    <div className="col-10">
+                        <div className="col-10">
                         <AboutMe aboutMe = {profileList[0]?.AboutMe}/>
-                        <br></br>
-                        <br></br>
-                        <p className="empty">İlgilediği Sporlar</p>
-                        <Title sports = {profileList.length !== 0 && profileList[0].Sports} className="Title"></Title>
+                        </div>
                     </div>
+                    
+                    <br></br>
+                    <br></br>
+                    <h3 className="empty">İlgilediği Sporlar</h3>
+                    <Title sports = {profileList.length !== 0 && profileList[0].Sports} className="Title"></Title>
+                    
                 </div>
 
             }
