@@ -1,7 +1,7 @@
 import Activity from "./Activity";
 import './ActivityList.css';
 import { useState, useEffect } from "react";
-
+import { useParams } from 'react-router-dom';
 import {db, auth, storage} from "../firebase/firebase";
 import {
     addDoc,
@@ -15,17 +15,19 @@ import {
 import {ref, uploadBytes} from "firebase/storage";
 
 
-const ActivityList = (props) =>{
+const ActivityList = () =>{
     const [activityList, setActivityList] = useState([]);
     const [newActivityTile, setNewActivityTitle] = useState("");
     const [newActivityDate, setNewActivityDate] = useState(0);
     const [loading, setLoading] = useState(false);
+    var { profilID } = useParams();
 
     
 
     const [fileUpload, setFileUpload] = useState(null);
     
     const activityCollectionRef = collection(db, "activities");
+
 
     useEffect(() => {
     
@@ -36,7 +38,7 @@ const ActivityList = (props) =>{
           querySnapshot.forEach((doc) => {
             items.push({...doc.data(), id: doc.id});
           });
-          const doubleFiltered = items.filter((doc) => doc.userId === auth?.currentUser?.uid) 
+          const doubleFiltered = items.filter((doc) => doc.userId === profilID) 
           setActivityList(doubleFiltered);
           setLoading(false);
         });
@@ -77,7 +79,7 @@ const ActivityList = (props) =>{
         }
         
     }
-    if (props.activities.length === 0){
+    if (activityList.length === 0){
         return <h2 className = 'activity-list__fallback'>Aktivite bulunamadı</h2>
     };
 

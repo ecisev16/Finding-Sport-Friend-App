@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ActivityList from '../components/ActivityList'
 import '../components/Button.css'
 import Activity from '../components/Activity';
@@ -9,6 +9,8 @@ import AboutMe from '../components/AboutMe'
 import Title from '../components/Title';
 import Name from '../components/Name';
 import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
+
 
 import {db, auth, storage} from "../firebase/firebase";
 import {
@@ -24,12 +26,29 @@ import {
     query,
     where,
 } from "firebase/firestore";
+import { useAuth } from './LogIn/Authentication';
 
 function ProfilePage(){
+    
+
+    // if(!profilID){
+    //     profilID = auth?.currentUser?.uid;
+    // }
     const [profileList, setProfileList] = useState([]);
     const profileCollectionRef = collection(db, "Profiles");
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+    var { profilID } = useParams();
+
+    
     //let loading
+    const ctx = useAuth();
+    const ownerActivitiesHandler = async () =>{
+
+        console.log(ctx.user.user.uid, "user id")
+        navigate(`/root/${profilID}/duzenlenen-aktiviteler`); 
+        
+    };
     
     useEffect(() => {
         
@@ -41,7 +60,7 @@ function ProfilePage(){
             querySnapshot.forEach((doc) => {
                 items.push(doc.data());
             });
-            const doubleFiltered = items.filter((doc) => doc.userID === auth?.currentUser?.uid)
+            const doubleFiltered = items.filter((doc) => doc.userID === profilID)
             setProfileList(doubleFiltered);
             //loading = false
             setLoading(false);
@@ -53,7 +72,7 @@ function ProfilePage(){
         };
     
         
-      }, []);
+      }, [profilID]);
 
     //   const aaaa = profileList.length !== 0 && profileList[0]?.Sports;
     profileList.length !== 0 && console.log( profileList[0].Sports, "SPORTS ARRAY VAR MI")
@@ -92,9 +111,9 @@ function ProfilePage(){
 
             <div className='row'>
                 <div className='col-6'>
-                <Link to="/root/profil/duzenlenen-aktiviteler">
-                    <button className = "button" key="k1">Düzenlenen Aktiviteler</button>
-                </Link>
+                <div>
+                    <button onClick = {ownerActivitiesHandler} className = "button" key="k1">Düzenlenen Aktiviteler</button>
+                </div>
                 </div>
                 <div className='col-6'>
                 <Link to="">

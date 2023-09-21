@@ -24,16 +24,23 @@ function SideBarButton(props){
         
     };
 
+    const profilHandler = async () =>{
+
+        console.log(ctx.user.user.uid, "user id")
+        navigate(`/root/${ctx.user.user.uid}`); 
+        
+    };
+
     
 
     return(
         <>
         <div className="sidebar-div">
-            <Link to="/root/profil" className="sidebar-link" style={{textDecoration: 'none'}}>
-                <button >Profil</button>
+            <div className="sidebar-link" style={{textDecoration: 'none'}}>
+                <button onClick = {profilHandler} >Profil</button>
                 
                 
-            </Link>
+            </div>
             <Link to="/root" className="sidebar-link" style={{textDecoration: 'none'}}>
                 
                 <button >Keşfet</button>

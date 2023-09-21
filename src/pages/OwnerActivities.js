@@ -31,7 +31,7 @@ export const ACTIVITIES = [
 export function OwnerActivitiesPage(){
     return(
         <div className="expenses">
-            <ActivityList activities = {ACTIVITIES}/>
+            <ActivityList/>
         </div>
         
         

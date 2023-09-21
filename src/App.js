@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <LogInPage/>,
-    //element: <StorePage/>
+  
     
   },
   {
@@ -27,9 +27,11 @@ const router = createBrowserRouter([
       
     children: [
       {index:true, element: <ExplorePage/>}, 
-      {path:'profil', element: <ProfilePage/>},
-      {path:'profil/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/> }, //<OwnerActivitiesPage/> <StorePage/>
-      {path:'profil/katilinan-aktiviteler', }, 
+      {path: ":profilID", element: <ProfilePage/>},
+      //{path:'profil', element: <ProfilePage/>},
+      {path:':profilID/duzenlenen-aktiviteler', element: <OwnerActivitiesPage/> }, //<OwnerActivitiesPage/> <StorePage/>
+      {path:':profilID/katilinan-aktiviteler', }, 
+
       
     ]
   }
@@ -42,20 +44,6 @@ function App() {
     <>
     
       <RouterProvider router={router}/>
-      {/*<Routes>
-        <Route path="/" element={<LogInPage />} />
-        <Route
-          path="/root"
-          element={
-            <ProtectedRoute>
-              <RootLayout />
-            </ProtectedRoute>
-          }
-          
-        />
-        </Routes>*/}
-      
-      
     </>
   )
   
