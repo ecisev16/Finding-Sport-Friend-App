@@ -1,13 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom';
-import ActivityList from '../components/ActivityList'
+import ActivityList from '../components/ActivityComponents/ActivityList'
 import '../components/Button.css'
-import Activity from '../components/Activity';
-import ProfilPhoto from '../components/ActivityProfilPhoto';
+import Activity from '../components/ActivityComponents/Activity';
+import ProfilPhoto from '../components/ActivityComponents/ActivityProfilPhoto';
 import './Profile.css'
-import PointExtractor from '../components/point'
-import AboutMe from '../components/AboutMe'
-import Title from '../components/Title';
-import Name from '../components/Name';
+import PointExtractor from '../components/ProfilComponents/point'
+import AboutMe from '../components/ProfilComponents/AboutMe'
+import Title from '../components/ProfilComponents/Title';
+import Name from '../components/ProfilComponents/Name';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import {db, auth, storage} from "../firebase/firebase";

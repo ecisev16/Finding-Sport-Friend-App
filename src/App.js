@@ -7,7 +7,7 @@ import {OwnerActivitiesPage} from './pages/OwnerActivities';
 import LogInPage from './pages/LogIn/LogIn';
 import  ProtectedRoute  from './pages/LogIn/ProtectedRoute';
 import { Auth } from 'firebase/auth';
-import Activity from './components/Activity';
+import Activity from './components/ActivityComponents/Activity';
 import {StorePage} from "./pages/Store";
 
 const router = createBrowserRouter([

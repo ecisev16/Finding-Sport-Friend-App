@@ -1,18 +1,13 @@
-
 import './Activity.css';
 import { useState} from "react";
 import ProfilPhoto from './ActivityProfilPhoto';
-import {db} from "../firebase/firebase";
+import {db} from "../../firebase/firebase";
 import {
-
     doc,
-
     updateDoc,
     deleteDoc,
-
-   
 } from "firebase/firestore";
-import { useAuth } from '../pages/LogIn/Authentication';
+import { useAuth } from '../../pages/LogIn/Authentication';
 
 function Activity(props){
 

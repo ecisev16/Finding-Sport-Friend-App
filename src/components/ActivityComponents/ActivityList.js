@@ -2,7 +2,7 @@ import Activity from "./Activity";
 import './ActivityList.css';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import {db, auth, storage} from "../firebase/firebase";
+import {db, auth, storage} from "../../firebase/firebase";
 import {
     addDoc,
     onSnapshot,
@@ -10,7 +10,7 @@ import {
    
 } from "firebase/firestore";
 import {ref, uploadBytes} from "firebase/storage";
-import { useAuth } from '../pages/LogIn/Authentication';
+import { useAuth } from '../../pages/LogIn/Authentication';
 
 
 const ActivityList = () =>{
@@ -20,11 +20,7 @@ const ActivityList = () =>{
     const [loading, setLoading] = useState(false);
     var { profilID } = useParams();
     const ctx = useAuth();
-
-    
-
     const [fileUpload, setFileUpload] = useState(null);
-    
     const activityCollectionRef = collection(db, "activities");
 
 

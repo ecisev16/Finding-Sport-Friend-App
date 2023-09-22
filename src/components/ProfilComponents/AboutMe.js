@@ -1,5 +1,5 @@
 import React from "react";
-import {dummyData} from '../pages/ProfilDummy'
+import {dummyData} from '../../pages/ProfilDummy'
 import './AboutMe.css'
 
 const AboutMe = (props) =>{
