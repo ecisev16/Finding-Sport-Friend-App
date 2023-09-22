@@ -13,6 +13,7 @@ import {
    
 } from "firebase/firestore";
 import {ref, uploadBytes} from "firebase/storage";
+import { useAuth } from '../pages/LogIn/Authentication';
 
 
 const ActivityList = () =>{
@@ -21,6 +22,7 @@ const ActivityList = () =>{
     const [newActivityDate, setNewActivityDate] = useState(0);
     const [loading, setLoading] = useState(false);
     var { profilID } = useParams();
+    const ctx = useAuth();
 
     
 
@@ -89,7 +91,9 @@ const ActivityList = () =>{
         <>
         
             {!loading && activityList.length > 0 &&
-            <><div>
+            <>
+            {ctx.user.user.uid === profilID &&
+            <div>
                 <input
                     placeholder="Activity title"
                     type="text"
@@ -102,24 +106,25 @@ const ActivityList = () =>{
                 ></input>
                 <button onClick={onSubmitActivity}>Submit Activity</button>
 
-            </div>
+            </div>}
             <div>
                 {activityList.map((act, index) => (
                     <div key={index}>
                         <Activity
                             activ = {act}
+                            profilID = {profilID}
                         />
                     </div>
                 ))}
             </div></>}
             {loading && <h1>Yükleniyor</h1>}
 
-                
+            {ctx.user.user.uid === profilID &&    
             <div>
                 <input type="file" onChange={(e) => setFileUpload(e.target.files[0])}></input>
                 <button onClick = {uploadFile}>Upload File</button>
             </div>
-            
+            }
                 
         </>
 

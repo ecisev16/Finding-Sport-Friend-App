@@ -14,13 +14,14 @@ import {
 
    
 } from "firebase/firestore";
+import { useAuth } from '../pages/LogIn/Authentication';
 
 function Activity(props){
 
   const [updatedTitle, setUpdatedTitle] = useState("");
-
+  const ctx = useAuth();
   const UpdateActivity = async (id) => {
-    console.log(id, "ID NE")
+    console.log(id, "ID")
     try{
       const updatedActivity = {
         title: updatedTitle
@@ -69,14 +70,15 @@ function Activity(props){
                 </div>
                 </div>
               </div>
-            
+          
           </div>
-          <button onClick={() => deleteActivity(props.activ.id)}>Delete Activity</button> 
-          <input
+          {ctx.user.user.uid === props.profilID &&
+             <><button onClick={() => deleteActivity(props.activ.id)}>Delete Activity</button><input
               placeholder="new Title"
               onChange={(e) => setUpdatedTitle(e.target.value)}
-          ></input>
-          <button onClick={() => UpdateActivity(props.activ.id)}>update</button>
+            ></input><button onClick={() => UpdateActivity(props.activ.id)}>update</button></>
+          } 
+         
         </div>
       </>
     );
