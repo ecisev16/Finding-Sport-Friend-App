@@ -17,17 +17,13 @@ export const StorePage = () =>{
     const [newActivityTile, setNewActivityTitle] = useState("");
     const [newActivityDate, setNewActivityDate] = useState(0);
     const [loading, setLoading] = useState(false);
-
     const [updatedTitle, setUpdatedTitle] = useState("");
-
     const [fileUpload, setFileUpload] = useState(null);
-    
     const activityCollectionRef = collection(db, "activities");
 
     useEffect(() => {
     
         setLoading(true);
-        //const unsub = onSnapshot(q, (querySnapshot) => {
         const unsub = onSnapshot(activityCollectionRef, (querySnapshot) => {
           const items = [];
           querySnapshot.forEach((doc) => {
@@ -41,14 +37,12 @@ export const StorePage = () =>{
         return () => {
           unsub();
         };
-    
-        // eslint-disable-next-line
       }, []);
 
     const deleteActivity = async (id) => {
         const activityDoc = doc(db, "activities", id);
         await deleteDoc(activityDoc);
-        //getActivityList();
+
     }
 
     const UpdateActivity = async (id) => {
@@ -57,7 +51,7 @@ export const StorePage = () =>{
         }
         const activityDoc = doc(db, "activities", id);
         await updateDoc(activityDoc, updatedActivity);
-        //getActivityList();
+
     }
 
     const uploadFile = async () => {
@@ -80,7 +74,6 @@ export const StorePage = () =>{
         }
         try{
             await addDoc(activityCollectionRef, newActivity)
-            //getActivityList();
         }catch(err){
             console.log(err)
         }
@@ -100,7 +93,7 @@ export const StorePage = () =>{
                 <input
                     placeholder="Activity date"
                     type="date"
-                    onChange={(e) => setNewActivityDate(Number(e.target.value))} //e.target.checked - bu checkbox için kullanılır.
+                    onChange={(e) => setNewActivityDate(Number(e.target.value))}
                 ></input>
                 <button onClick={onSubmitActivity}>Submit Activity</button>
 
@@ -112,7 +105,7 @@ export const StorePage = () =>{
                             {act.title}
 
                         </h1>
-                        <button onClick={() => deleteActivity(act.id)}>Delete Activity</button> {/*{() => deleteActivity(act.id)} garip notasyon ama bu şekilde olmalı.*/}
+                        <button onClick={() => deleteActivity(act.id)}>Delete Activity</button>
                         <input
                             placeholder="new Title"
                             onChange={(e) => setUpdatedTitle(e.target.value)}

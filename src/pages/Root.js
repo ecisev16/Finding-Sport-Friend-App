@@ -1,5 +1,4 @@
 import {Outlet} from 'react-router-dom';
-
 import Header from '../PageComponents/Header/Header';
 import SideBar from '../PageComponents/SideBar/SideBar';
 

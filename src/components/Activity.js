@@ -1,10 +1,8 @@
-import { Link } from 'react-router-dom';
+
 import './Activity.css';
-import ActivityDate from './ActivityDate';
-import Card from '../UI/Card';
 import { useState} from "react";
 import ProfilPhoto from './ActivityProfilPhoto';
-import {db, auth, storage} from "../firebase/firebase";
+import {db} from "../firebase/firebase";
 import {
 
     doc,
@@ -56,13 +54,7 @@ function Activity(props){
               </div>
 
               <div className="col-3">
-                <div className='activity-box-time-and-invite'>
-
-                
-                {/*<div className="activty-box-time">
-                  <ActivityDate date={props.date}></ActivityDate>
-                </div>*/}
-                
+                <div className='activity-box-time-and-invite'>      
                 <div className="activty-box-invite">
                   <button className="activity-item__button">
                     Katılma isteği

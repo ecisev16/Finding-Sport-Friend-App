@@ -5,10 +5,7 @@ import { useParams } from 'react-router-dom';
 import {db, auth, storage} from "../firebase/firebase";
 import {
     addDoc,
-    doc,
     onSnapshot,
-    updateDoc,
-    deleteDoc,
     collection,
    
 } from "firebase/firestore";
@@ -34,7 +31,6 @@ const ActivityList = () =>{
     useEffect(() => {
     
         setLoading(true);
-        //const unsub = onSnapshot(q, (querySnapshot) => {
         const unsub = onSnapshot(activityCollectionRef, (querySnapshot) => {
           const items = [];
           querySnapshot.forEach((doc) => {
@@ -47,8 +43,6 @@ const ActivityList = () =>{
         return () => {
           unsub();
         };
-    
-        // eslint-disable-next-line
       }, []);
 
     
@@ -75,7 +69,6 @@ const ActivityList = () =>{
         }
         try{
             await addDoc(activityCollectionRef, newActivity)
-            //getActivityList();
         }catch(err){
             console.log(err)
         }

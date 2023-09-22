@@ -10,38 +10,21 @@ import Title from '../components/Title';
 import Name from '../components/Name';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-
-
 import {db, auth, storage} from "../firebase/firebase";
 import {
-    addDoc,
-    doc,
     onSnapshot,
-    updateDoc,
-    setDoc,
-    deleteDoc,
     collection,
-    serverTimestamp,
-    getDocs,
-    query,
-    where,
 } from "firebase/firestore";
 import { useAuth } from './LogIn/Authentication';
 
 function ProfilePage(){
-    
 
-    // if(!profilID){
-    //     profilID = auth?.currentUser?.uid;
-    // }
     const [profileList, setProfileList] = useState([]);
     const profileCollectionRef = collection(db, "Profiles");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     var { profilID } = useParams();
 
-    
-    //let loading
     const ctx = useAuth();
     const ownerActivitiesHandler = async () =>{
 
@@ -51,8 +34,7 @@ function ProfilePage(){
     };
     
     useEffect(() => {
-        
-        //loading = true
+
         setLoading(true);
         
         const unsub = onSnapshot(profileCollectionRef, (querySnapshot) => {
@@ -62,7 +44,6 @@ function ProfilePage(){
             });
             const doubleFiltered = items.filter((doc) => doc.userID === profilID)
             setProfileList(doubleFiltered);
-            //loading = false
             setLoading(false);
         });
 
@@ -74,7 +55,6 @@ function ProfilePage(){
         
       }, [profilID]);
 
-    //   const aaaa = profileList.length !== 0 && profileList[0]?.Sports;
     profileList.length !== 0 && console.log( profileList[0].Sports, "SPORTS ARRAY VAR MI")
     return (
       <>
