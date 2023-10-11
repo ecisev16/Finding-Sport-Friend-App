@@ -12,13 +12,13 @@ import {StorePage} from "./pages/Store";
 
 const router = createBrowserRouter([
   {
-    path: 'https://ecisev16.github.io/Finding-Sport-Friend-App/',
+    path: '/',
     element: <LogInPage/>,
   
     
   },
   {
-    path: 'https://ecisev16.github.io/Finding-Sport-Friend-App/root', 
+    path: '/root', 
     element: 
       <ProtectedRoute>
         <RootLayout/>
