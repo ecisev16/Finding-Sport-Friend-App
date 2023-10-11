@@ -12,6 +12,3 @@ Profil 1 mail adresi, ppp@pp.pp; şifresi pppppp   -- Hüsamettin Solmaz
 Profil 2 mail adresi, ggg@gg.gg; şifresi gggggg   -- Eren Yılmaz
 
 profil 3 mail adresi, eee@ee.ee; şifresi eeeeee   -- Aylin Koçyiğit
-
-read.me
-read.me update
