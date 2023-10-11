@@ -108,12 +108,12 @@ const ActivityList = () =>{
             </div></>}
             {loading && <h1>Yükleniyor</h1>}
 
-            {ctx.user.user.uid === profilID &&    
+            {/*{ctx.user.user.uid === profilID &&    
             <div>
                 <input type="file" onChange={(e) => setFileUpload(e.target.files[0])}></input>
                 <button onClick = {uploadFile}>Upload File</button>
             </div>
-            }
+            }*/}
                 
         </>
 

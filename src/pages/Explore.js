@@ -23,17 +23,17 @@ function ExplorePage(){
 
             <div style={{textDecoration: 'none'}}>
                 
-                <button onClick={() => exploreHandler(id_1)} >ppp</button>
+                <button onClick={() => exploreHandler(id_1)} >Hüsamettin Solmaz</button>
                 
             </div>
             <div style={{textDecoration: 'none'}}>
                 
-                <button onClick={() => exploreHandler(id_2)} >eee</button>
+                <button onClick={() => exploreHandler(id_2)} >Aylin Koçyiğit</button>
                 
             </div>
             <div style={{textDecoration: 'none'}}>
                 
-                <button onClick={() => exploreHandler(id_3)} >ggg</button>
+                <button onClick={() => exploreHandler(id_3)} >Eren Yılmaz</button>
                 
             </div>
             
