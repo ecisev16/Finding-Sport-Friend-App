@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
   console.log(user, "kontrol");
   if (!user) {
     // user is not authenticated
-    return <Navigate to="/Finding-Sport-Friend-App/" />;
+    return <Navigate to="/" />;
   }
   return children;
 };

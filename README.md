@@ -8,7 +8,8 @@ Projenin şu an için kullanılabilir fonksiyonları; Giriş yapma, kayıt olma,
 Örnek olarak yaratılan 3 profilin bilgileri şunlardır:
 
 Profil 1 mail adresi, ppp@pp.pp; şifresi pppppp   -- Hüsamettin Solmaz
-
 Profil 2 mail adresi, ggg@gg.gg; şifresi gggggg   -- Eren Yılmaz
-
 profil 3 mail adresi, eee@ee.ee; şifresi eeeeee   -- Aylin Koçyiğit
+
+read.me
+read.me update

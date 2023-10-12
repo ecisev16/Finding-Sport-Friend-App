@@ -12,7 +12,7 @@ import {StorePage} from "./pages/Store";
 
 const router = createBrowserRouter([
   {
-    path: '/Finding-Sport-Friend-App/',
+    path: '/',
     element: <LogInPage/>,
   
     
