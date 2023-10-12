@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Finding-Sport-Friend-App/static/css/main.d22ce458.css",
+    "main.js": "/Finding-Sport-Friend-App/static/js/main.32250ec5.js",
+    "index.html": "/Finding-Sport-Friend-App/index.html",
+    "main.d22ce458.css.map": "/Finding-Sport-Friend-App/static/css/main.d22ce458.css.map",
+    "main.32250ec5.js.map": "/Finding-Sport-Friend-App/static/js/main.32250ec5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d22ce458.css",
+    "static/js/main.32250ec5.js"
+  ]
+}
